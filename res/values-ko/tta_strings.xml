@@ -57,6 +57,36 @@ limitations under the License.
     <string name="vsfe">기획, 마케팅, klm03025@gmail.com</string>
     <string name="github">Team Triangles 깃허브</string>
     <string name="github_address">클릭하면 깃허브로 이동합니다.</string>
+
+
+    <!-- Lockscreen Notifications -->
+    <!-- Categories -->
+    <string name="general">일반</string>
+    <string name="layout">레이아웃</string>
+    <string name="privacy">보안</string>
+    <string name="lockscreen_notifications">잠금화면 알림</string>
+    <string name="lockscreen_notifications_summary">잠금화면에서 수신된 알림을 보여줍니다.</string>
+    <string name="pocket_mode">포켓 모드</string>
+    <string name="pocket_mode_summary">주머니에서 꺼내면 화면을 켜 알림을 보여줍니다.</string>
+    <string name="show_always">항상 보이기</string>
+    <string name="show_always_summary">알림이 없어도 화면을 켜 알림 표시</string>
+    <string name="hide_low_priority">낮은 순위 알림 제외</string>
+    <string name="hide_low_priority_summary">낮은 순위 알림은 표시하지 않습니다. (Google Now, 날씨 등)</string>
+    <string name="hide_non_clearable">고정 알림 숨김</string>
+    <string name="hide_non_clearable_summary">고정되어 있는 알림은 표시하지 않습니다.</string>
+    <string name="dismiss_all">고정 알림 지우기</string>
+    <string name="dismiss_all_summary">고정 알림을 지우도록 허용합니다. 이 알림은 상태 표시줄에서는 지워지지 않습니다.</string>
+    <string name="expanded_view">확장해서 보여주기</string>
+    <string name="expanded_view_summary">길게 눌러 알림을 확장하여 보여줍니다.</string>
+    <string name="force_expanded_view">강제 확장</string>
+    <string name="force_expanded_view_summary">기본으로 알림을 확장하여 보여줍니다.</string>
+    <string name="wake_on_notification">알림이 수신되면 화면 켜기</string>
+    <string name="wake_on_notification_summary">새로운 알림이 오면 화면을 켜서 보여줍니</string>
+    <string name="notifications_height">표시될 알림 수</string>
+    <string name="notifications_height_summary">한번에 표시될 알림 수를 설정합니다.</string>
+    <string name="offset_top">화면 상단에 오프셋:</string>
+    <string name="privacy_mode">개인정보 보호</string>
+    <string name="privacy_mode_summary">잠금화면 알림의 아이콘만 표시합니다. 내용이나 개인정보는 표시되지 않습니다.</string>
 </resources>
 
 
