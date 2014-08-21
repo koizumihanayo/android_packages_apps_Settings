@@ -51,13 +51,14 @@
             android:title="@string/lockscreen_buttons_title"
             android:summary="@string/lockscreen_buttons_summary" />
 
-		<PreferenceScreen
-            android:title="@string/lockscreen_notifications"
-            android:fragment="com.android.settings.triangle.LockscreenNotifications" />
-
         <CheckBoxPreference
             android:key="lockscreen_modlock_enabled"
             android:title="@string/lockscreen_enable_modlock_title" />
+
+	<PreferenceScreen
+	    android:title="@string/notifications_on_lockscreen"
+	    android:fragment="com.android.settings.triangle.LockscreenNotifications"
+            android:summary="@string/notifications_on_lockscreen_summary" />
 
     </PreferenceCategory>
 

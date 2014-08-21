@@ -87,6 +87,19 @@ limitations under the License.
     <string name="offset_top">화면 상단에 오프셋:</string>
     <string name="privacy_mode">개인정보 보호</string>
     <string name="privacy_mode_summary">잠금화면 알림의 아이콘만 표시합니다. 내용이나 개인정보는 표시되지 않습니다.</string>
+
+   
+    <!-- Peek -->
+    <string name="note">주의!</string>
+    <string name="notifications_on_lockscreen">잠금화면 알림 방식</string>
+    <string name="notifications_on_lockscreen_summary">잠금화면에서 표시될 알림 방식을 설정하세요.</string>
+    <string name="notifications_on_lockscreen_warning_summary">잠금화면 알림과 Peek는 동시에 사용될 수 없습니다. 한쪽만 선택해 주세요.</string>
+
+    <!--Notification peek-->
+    <string name="notification_peek_title">Peek</string>
+    <string name="notification_peek_summary">디바이스를 들면 자동으로 미확인 알림을 보여줍니다.</string>
+
+
 </resources>
 
 

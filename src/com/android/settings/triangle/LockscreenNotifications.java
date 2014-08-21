@@ -22,6 +22,7 @@ import com.android.settings.R;
 
 public class LockscreenNotifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_PEEK = "notification_peek";
     private static final String KEY_LOCKSCREEN_NOTIFICATIONS = "lockscreen_notifications";
     private static final String KEY_POCKET_MODE = "pocket_mode";
     private static final String KEY_SHOW_ALWAYS = "show_always";
@@ -35,6 +36,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private static final String KEY_PRIVACY_MODE = "privacy_mode";
     private static final String KEY_OFFSET_TOP = "offset_top";
 
+    private CheckBoxPreference mNotificationPeek;
     private CheckBoxPreference mLockscreenNotifications;
     private CheckBoxPreference mPocketMode;
     private CheckBoxPreference mShowAlways;
@@ -55,6 +57,9 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         addPreferencesFromResource(R.xml.lockscreen_notifications);
         PreferenceScreen prefs = getPreferenceScreen();
         final ContentResolver cr = getActivity().getContentResolver();
+
+	mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
+	mNotificationPeek.setPersistent(false);
 
         mLockscreenNotifications = (CheckBoxPreference) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATIONS);
         mLockscreenNotifications.setChecked(Settings.System.getInt(cr,
@@ -130,12 +135,34 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
             prefs.removePreference(mPocketMode);
             prefs.removePreference(mShowAlways);
         }
+
+	//updateNotificationOptions();
+    }
+
+    @Override
+    public void onResume() {
+	super.onResume();
+	updateState();
+    }
+
+    private void updateState() {
+	updatePeekCheckbox();
+    }
+
+    private void updatePeekCheckbox() {
+	boolean enabled = Settings.System.getInt(getContentResolver(),
+	    Settings.System.PEEK_STATE, 0) == 1;
+	mNotificationPeek.setChecked(enabled);
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         ContentResolver cr = getActivity().getContentResolver();
-        if (preference == mLockscreenNotifications) {
+	if (preference == mNotificationPeek) {
+	    Settings.System.putInt(cr, Settings.System.PEEK_STATE,
+	            mNotificationPeek.isChecked() ? 1 : 0);
+	    //updateNotificationOptions();
+	} else if (preference == mLockscreenNotifications) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS,
                     mLockscreenNotifications.isChecked() ? 1 : 0);
             mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
@@ -149,6 +176,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
             mForceExpandedView.setEnabled(mLockscreenNotifications.isChecked() && mExpandedView.isChecked()
                         && !mPrivacyMode.isChecked());
             mExpandedView.setEnabled(mLockscreenNotifications.isChecked() && !mPrivacyMode.isChecked());
+	    //updateNotificationOptions();
         } else if (preference == mPocketMode) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE,
                     mPocketMode.isChecked() ? 1 : 0);
@@ -207,5 +235,33 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         }
         return true;
     }
+
+    /*
+    updateNotificationOptions쪽에서 에러나서 일단 주석처리
+    // Auto disable LN if PEEK is enabled
+    private void updateNotificationOptions() {
+	boolean peekState = Settings.System.getBoolean(getActivity().getContentResolver(),
+	       Settings.System.PEEK_STATE, false);
+	boolean lockNotif = Settings.System.getBoolean(getActivity().getContentResolver(),
+	       Settings.System.LOCKSCREEN_NOTIFICATIONS, false);
+
+	if (peekState) {
+	    mLockscreenNotifications.setEnabled(false);
+	    mLockscreenNotifications.setChecked(false);
+	    Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+	       Settings.System.LOCKSCREEN_NOTIFICATIONS, 0);
+	} else {
+	    mLockscreenNotifications.setEnabled(true);
+	if (lockNotif) {
+	    mNotificationPeek.setEnabled(false);
+	    // Ensure that PEEK is disable
+	    Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+	       Settings.System.PEEK_STATE, 0);
+	} else {
+	    mNotificationPeek.setEnabled(true);
+	}
+     }
+   }
+   */
 }
 
