@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 Team Triangles ROM Project
+<!-- Copyright (C) 2012-2013 SlimRoms Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,21 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-	<!-- Triangles Section -->
-    <string name="triangle_section">Triangles Section</string>
-    <string name="github">Github</string>
-    <string name="github_address">View Github of Team Triangles</string>
-    <string name="facebook">Facebook</string>
-    <string name="facebook_address">View Facebook of Team Triangles</string>
-    <string name="developer_info">Developer Information</string>
-    <string name="developer_info_summary">View Information about Team Triangles Developers</string>
-    <string name="tta_rom_info">ROM Information</string>
-    <string name="trianglesrom_version">TrianglesROM Version</string>
-    <string name="tta_ota_update">OTA Update</string>
-    <string name="tta_ota_update_summary">Check Updates for TrianglesROM</string>
-
-
-
     <!-- About Triangles -->
     <string name="about_triangle">About Team Triangles</string>
     <string name="about_triangle1">Team Triangles ROM Project</string>
@@ -42,12 +27,13 @@ limitations under the License.
     <string name="kernel">Kernel Developers</string>
     <string name="app_developer">Application Developer</string>
     <string name="homepage_server_manager">Homepage/Server Manager</string>
+    <string name="others">Others</string>
     <string name="manager_namja">NamJa (Jongwoo Kim, kjwoo810@gmail.com)</string>
-    <string name="manager_limeon">LimeOn (Junseok Oh, nishikinomaki2014@gmail.com)</string>
+    <string name="manager_limeon">LimeOn (Junseok Oh, limeon2014@gmail.com)</string>
     <string name="platform_namja">NamJa (Jongwoo Kim)</string>
     <string name="namja">Platform Maintainer, kjwoo810@gmail.com</string>
     <string name="platform_limeon">LimeOn (Junseok Oh)</string>
-    <string name="limeon">Platform Maintainer, Interface Designer, nishikinomaki2014@gmail.com</string>
+    <string name="limeon">Platform Maintainer, Interface Designer, limeon2014@gmail.com</string>
     <string name="platform_n4using">N4Using (Wontae Choi)</string>
     <string name="n4using">Platform Maintainer, dnjsxo516@naver.com</string>
     <string name="platform_hammer">Hammer-Dev (Sanglyeol Park)</string>
@@ -68,6 +54,8 @@ limitations under the License.
     <string name="onplay">Interface Designer, khw3548@naver.com</string>
     <string name="planner_vsfe">VSFe (Byeongcheol Kim)</string>
     <string name="vsfe">Planning Department, Marketing Department, klm03025@gmail.com</string>
+    <string name="github">Team Triangles Github</string>
+    <string name="github_address">Connect to Team Triangles Github</string>
 
     <!-- Lockscreen Notifications -->
     <!-- Categories -->
