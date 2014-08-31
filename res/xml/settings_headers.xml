@@ -84,6 +84,14 @@
     <header android:id="@+id/interface_section"
         android:title="@string/header_category_interface" />
 
+	<!-- Triangles Section -->
+    <header
+        settings:includeXmlForSearch="@xml/triangle_section"
+        android:id="@+id/triangle_section"
+        android:title="@string/triangle_section"
+        android:fragment="com.android.settings.TriangleSection"
+        android:icon="@drawable/prd_ic_themepacks" />
+
     <!-- Home -->
     <header
         android:id="@+id/home_settings"
